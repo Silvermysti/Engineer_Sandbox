@@ -2,8 +2,12 @@
 import httpx
 import json
 
+import os
+from dotenv import load_dotenv
+load_dotenv()
+
 # Groq API key (free tier at https://console.groq.com)
-GROQ_API_KEY = "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"
+GROQ_API_KEY = os.getenv("GROQ_API_KEY")
 GROQ_URL = "https://api.groq.com/openai/v1/chat/completions"
 
 class OllamaError(Exception):
